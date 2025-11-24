@@ -13,13 +13,17 @@ struct gymxApp: App {
     
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     @State private var showOnboarding: Bool = true
+    init() {
+         // Initialize showOnboarding with the current AppStorage value
+         _showOnboarding = State(initialValue: isFirstLaunch)
+     }
     var body: some Scene {
         WindowGroup {
             Group {
                 if showOnboarding{
                     OnboardingView(isFirstLaunch: $isFirstLaunch)
                 }else{
-                    LoginView()
+                    SignupView()
                 }
             }
             .onAppear {
