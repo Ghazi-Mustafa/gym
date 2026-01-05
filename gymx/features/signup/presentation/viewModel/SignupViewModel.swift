@@ -12,9 +12,9 @@ import Combine
 class SignupViewModel : ObservableObject {
     
     
-    @Published var firstName : String = ""
-    @Published var password : String = ""
-    @Published var lastName : String = ""
-    @Published var email : String = ""
+    @Published var firstNameTxtField : String = ""
+    @Published var passwordTxtField : String = ""
+    @Published var lastNameTxtField : String = ""
+    @Published var emailTxtField : String = ""
     @Published var isChecked = false
 }

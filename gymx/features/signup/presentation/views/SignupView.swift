@@ -10,17 +10,15 @@ import SwiftUI
 struct SignupView: View {
     @StateObject var viewModel = SignupViewModel()
     var body: some View {
-        
         GeometryReader{ geo in
             ScrollView {
                 VStack(spacing: 15){
                     TitleSection()
                         .padding(.bottom,25)
                     
-                    SignupForm(firstName: $viewModel.firstName, lastName: $viewModel.lastName, email: $viewModel.email, password: $viewModel.password)
+                    SignupForm(firstName: $viewModel.firstNameTxtField, lastName: $viewModel.lastNameTxtField, email: $viewModel.emailTxtField, password: $viewModel.passwordTxtField)
                     
                     CheckBoxRow(isChecked: $viewModel.isChecked)
-                    
                         .padding(.leading,5)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
@@ -33,9 +31,7 @@ struct SignupView: View {
                     AuthOptions()
                     
                     AlreadyHaveAccountRow()
-                        .padding(.top)
-                    
-                    
+                        .padding(.vertical)
                 }
                 .ignoresSafeArea(.all, edges: .top)
                 .padding(.top,20)
