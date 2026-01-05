@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FirebaseCore
 
 @main
 struct gymxApp: App {
@@ -16,6 +17,7 @@ struct gymxApp: App {
     init() {
          // Initialize showOnboarding with the current AppStorage value
          _showOnboarding = State(initialValue: isFirstLaunch)
+        FirebaseApp.configure()
      }
     var body: some Scene {
         WindowGroup {

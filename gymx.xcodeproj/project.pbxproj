@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		12CCFFB92ED4D07E003A969D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12CCFFB82ED4D07E003A969D /* FirebaseAuth */; };
+		12CCFFBB2ED4D07E003A969D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 12CCFFBA2ED4D07E003A969D /* FirebaseCore */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
 		1247764F2EBBB9DC00EB0021 /* gymx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gymx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -36,6 +41,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				12CCFFBB2ED4D07E003A969D /* FirebaseCore in Frameworks */,
+				12CCFFB92ED4D07E003A969D /* FirebaseAuth in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +85,8 @@
 			);
 			name = gymx;
 			packageProductDependencies = (
+				12CCFFB82ED4D07E003A969D /* FirebaseAuth */,
+				12CCFFBA2ED4D07E003A969D /* FirebaseCore */,
 			);
 			productName = gymx;
 			productReference = 1247764F2EBBB9DC00EB0021 /* gymx.app */;
@@ -104,10 +113,12 @@
 			knownRegions = (
 				en,
 				Base,
+				ar,
 			);
 			mainGroup = 124776462EBBB9DC00EB0021;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
+				12CCFFB72ED4D07E003A969D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = 124776502EBBB9DC00EB0021 /* Products */;
@@ -145,6 +156,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -209,6 +221,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -351,6 +364,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		12CCFFB72ED4D07E003A969D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		12CCFFB82ED4D07E003A969D /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12CCFFB72ED4D07E003A969D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		12CCFFBA2ED4D07E003A969D /* FirebaseCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 12CCFFB72ED4D07E003A969D /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 124776472EBBB9DC00EB0021 /* Project object */;
 }

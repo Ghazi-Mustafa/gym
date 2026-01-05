@@ -1,0 +1,22 @@
+/* 
+  Localizable.strings
+  gymx
+
+  Created by Mustafa Ghazi on 05/01/26.
+  
+*/
+
+"slide1_title" = "Track Your Goal";
+"slide1_desc"  = "Don't worry if you have trouble determining your goals. We can help you track them.";
+
+"slide2_title" = "Get Burn";
+"slide2_desc"  = "Let’s keep burning to achieve your goals. It hurts only temporarily; if you give up now, you will be in pain forever.";
+
+"slide3_title" = "Eat Well";
+"slide3_desc"  = "Let's start a healthy lifestyle with us. We can plan your diet every day. Healthy eating is fun!";
+
+"slide4_title" = "Improve Sleep Quality";
+"slide4_desc"  = "Improve the quality of your sleep with us. Good sleep brings a good mood in the morning.";
+
+"get_started" = "Get Started";
+
