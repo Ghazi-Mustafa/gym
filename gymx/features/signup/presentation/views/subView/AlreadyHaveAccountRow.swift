@@ -10,11 +10,11 @@ import SwiftUI
 struct AlreadyHaveAccountRow: View {
     var body: some View {
         HStack(spacing: 5){
-            Text("Already have an account?")
+            Text(LocaleKeys.Signup.alreadyHaveAccount)
                 .font(.custom("Poppins-Regular", size: 14))
                 .fontWeight(.regular)
                 .fontWeight(.medium)
-            Text("Login")
+            Text(LocaleKeys.Signup.login)
                 .foregroundStyle(LinearGradient(colors: [
                     Color(hex: "EEA4CE"),
                     Color(hex: "C58BF2")

@@ -14,10 +14,10 @@ struct SignupForm: View {
     @Binding var password : String
     var body: some View {
         VStack(spacing: 15){
-            IconTextField(placeHolder: "First Name", text: $firstName, leadingIcon: "person")
-            IconTextField(placeHolder: "Last Name", text: $lastName, leadingIcon: "person")
-            IconTextField(placeHolder:"Email", text: $email, leadingIcon: "envelope")
-            PasswordTextField(password: $password, placeholder: "Password")
+            IconTextField(placeHolder: LocaleKeys.Signup.firstName, text: $firstName, leadingIcon: "person")
+            IconTextField(placeHolder: LocaleKeys.Signup.lasName, text: $lastName, leadingIcon: "person")
+            IconTextField(placeHolder:LocaleKeys.Signup.email, text: $email, leadingIcon: "envelope")
+            PasswordTextField(password: $password, placeholder: LocaleKeys.Signup.password)
             
         }
         .scrollDisabled(true)

@@ -29,6 +29,20 @@ struct LocaleKeys {
         
         static let getStarted = LocalizedStringKey("get_started")
     }
+    
+    struct Signup {
+        static let register = LocalizedStringKey("register")
+        static let or = LocalizedStringKey("or")
+        static let login = LocalizedStringKey("login")
+        static let firstName = LocalizedStringKey("first_name")
+        static let lasName = LocalizedStringKey("last_name")
+        static let password = LocalizedStringKey("password")
+        static let email = LocalizedStringKey("email" )
+        static let createAccount = LocalizedStringKey("create_account")
+        static let heyThere = LocalizedStringKey("hey_there")
+        static let byContinuingAccept = LocalizedStringKey("by_continuing_accept")
+        static let alreadyHaveAccount = LocalizedStringKey("already_have_account")
+    }
 }
 
 

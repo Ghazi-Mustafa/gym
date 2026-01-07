@@ -24,7 +24,7 @@ struct SignupView: View {
                     
                     Spacer()
                     
-                    AppCustomButton(title: "Register")
+                    AppCustomButton(title: LocaleKeys.Signup.register)
                     
                     CustomDivider()
                     

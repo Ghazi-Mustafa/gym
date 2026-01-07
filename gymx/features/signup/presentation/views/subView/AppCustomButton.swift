@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct AppCustomButton: View {
-    let title : String
+    let title : LocalizedStringKey
     var body: some View {
         Button {
             // handle the signup

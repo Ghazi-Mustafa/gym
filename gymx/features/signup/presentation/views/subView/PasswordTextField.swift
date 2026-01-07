@@ -11,7 +11,7 @@ struct PasswordTextField: View {
     
     @Binding var password: String
     @State private var isSecure: Bool = true
-    var placeholder: String = "Password"
+    var placeholder: LocalizedStringKey;
     
     var body: some View {
         HStack(spacing: 15) {

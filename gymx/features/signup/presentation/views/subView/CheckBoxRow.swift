@@ -16,7 +16,7 @@ struct CheckBoxRow: View {
                     isChecked.toggle()
                 }
                 .foregroundStyle(isChecked ? .black : Color(hex: "ADA4A5"))
-            Text("By continuing you accept our Privacy Policy and \nTerm of Use")
+            Text(LocaleKeys.Signup.byContinuingAccept)
                 
                 .font(.custom("Poppins-Regular", size: 10))
             
