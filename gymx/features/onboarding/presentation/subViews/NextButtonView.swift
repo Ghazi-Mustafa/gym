@@ -17,7 +17,7 @@ struct NextButtonView : View {
             action()
         }) {
             if isLastSlide {
-                Text("Get Started")
+                Text(LocaleKeys.Onboarding.getStarted)
                     .font(.headline)
                     .padding()
                     .foregroundColor(.white)

@@ -5,12 +5,13 @@
 //  Created by Mustafa Ghazi on 05/11/25.
 //
 
-import Foundation
+import SwiftUI
 
 struct OnboardingSlideModel : Identifiable{
     let id = UUID()
-    let title : String
-    let descreption : String
+    let title : LocalizedStringKey
+    let descreption : LocalizedStringKey
     let imageName:String
     
 }
+
