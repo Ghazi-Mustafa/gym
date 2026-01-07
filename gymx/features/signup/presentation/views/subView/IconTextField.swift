@@ -15,12 +15,12 @@ struct IconTextField: View {
     @Binding var text : String
     @State private var isTrailingIconChanged = false
     let leadingIcon : String
-    let placeHolder : String
+    let placeHolder : LocalizedStringKey
     var trailingIcon : String? = nil
     var tappedTrailingIcon : String? = nil
     
     
-    init(placeHolder: String,text: Binding<String>, leadingIcon: String, trailingIcon : String? = nil,tappedTrailingIcon:String? = nil) {
+    init(placeHolder: LocalizedStringKey,text: Binding<String>, leadingIcon: String, trailingIcon : String? = nil,tappedTrailingIcon:String? = nil) {
         self.placeHolder = placeHolder
         self._text = text
         self.leadingIcon = leadingIcon

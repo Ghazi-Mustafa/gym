@@ -20,3 +20,16 @@
 
 "get_started" = "Get Started";
 
+"already_have_account" = "Already have an account?";
+"login" = "Login";
+"register" = "Register";
+"or" = "Or";
+"by_continuing_accept" = "By continuing you accept our Privacy Policy and \nTerms of Use";
+"hey_there" = "Hey there,";
+"create_account" = "Create an Account";
+"first_name" = "First Name";
+"last_name" = "Last Name";
+"email" = "Email";
+"password" = "Password";
+
+

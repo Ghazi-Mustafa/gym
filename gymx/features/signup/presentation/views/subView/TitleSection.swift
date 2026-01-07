@@ -10,8 +10,8 @@ import SwiftUI
 struct TitleSection: View {
     var body: some View {
         VStack(alignment: .center,spacing: 5){
-            Text("Hey there,")
-            Text("Create an Account")
+            Text(LocaleKeys.Signup.heyThere)
+            Text(LocaleKeys.Signup.createAccount)
                 .font(.custom("Poppins-Bold", size: 20))
                 .fontWeight(.bold)
         }
