@@ -1,0 +1,36 @@
+/* 
+  Localizable.strings
+  gymx
+
+  Created by Mustafa Ghazi on 05/01/26.
+  
+*/
+
+"slide1_title" = "Traccia i tuoi obiettivi";
+"slide1_desc"  = "Non preoccuparti se hai difficoltà a definire i tuoi obiettivi. Possiamo aiutarti a tracciarli.";
+
+"slide2_title" = "Brucia calorie";
+"slide2_desc"  = "Continuiamo a bruciare per raggiungere i tuoi obiettivi. Fa male solo temporaneamente; se ti arrendi ora, te ne pentirai a lungo.";
+
+"slide3_title" = "Mangia sano";
+"slide3_desc"  = "Iniziamo insieme uno stile di vita sano. Possiamo pianificare la tua dieta ogni giorno. Mangiare sano è divertente!";
+
+"slide4_title" = "Migliora la qualità del sonno";
+"slide4_desc"  = "Migliora la qualità del tuo sonno con noi. Dormire bene porta buon umore al mattino.";
+
+"get_started" = "Inizia";
+
+"already_have_account" = "Hai già un account?";
+"login" = "Accedi";
+"register" = "Registrati";
+"or" = "Oppure";
+"by_continuing_accept" = "Continuando accetti la nostra Informativa sulla privacy e i \nTermini di utilizzo";
+"hey_there" = "Ciao,";
+"create_account" = "Crea un account";
+"first_name" = "Nome";
+"last_name" = "Cognome";
+"email" = "Email";
+"password" = "Password";
+
+
+

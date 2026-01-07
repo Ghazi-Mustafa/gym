@@ -13,7 +13,6 @@ struct OnboardingView: View {
     @Binding var isFirstLaunch : Bool
     
     var body: some View {
-        
         ZStack(alignment: .bottomTrailing){
             TabView(selection: $viewModel.currentIndex) {
                 ForEach(0..<viewModel.slides.count,id: \.self) { index in
@@ -47,10 +46,24 @@ struct OnboardingView: View {
         }) {
             SignupView()
         }
+
+
     }
     
 }
 
+extension View {
+    func localizedAlignment(_ locale: Locale) -> some View {
+        let isArabic = locale.identifier.hasPrefix("ar")
+                return self
+                    .frame(maxWidth: .infinity, alignment: isArabic ? .trailing : .leading)
+                    .multilineTextAlignment(isArabic ? .trailing : .leading)
+    }
+}
+
 #Preview {
-    OnboardingView( isFirstLaunch:.constant(true))
+        OnboardingView(isFirstLaunch: .constant(true))
+            .environment(\.locale, Locale(identifier: "en"))
+            .previewDisplayName("Arabic")
+
 }
