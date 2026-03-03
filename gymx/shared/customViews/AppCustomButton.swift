@@ -9,9 +9,10 @@ import SwiftUI
 
 struct AppCustomButton: View {
     let title : LocalizedStringKey
+    let onTap : ()-> ()
     var body: some View {
         Button {
-            // handle the signup
+            onTap()
         } label: {
             Text(title)
                 .padding()

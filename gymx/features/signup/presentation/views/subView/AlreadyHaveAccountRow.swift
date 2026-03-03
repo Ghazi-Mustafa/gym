@@ -14,13 +14,19 @@ struct AlreadyHaveAccountRow: View {
                 .font(.custom("Poppins-Regular", size: 14))
                 .fontWeight(.regular)
                 .fontWeight(.medium)
-            Text(LocaleKeys.Signup.login)
-                .foregroundStyle(LinearGradient(colors: [
-                    Color(hex: "EEA4CE"),
-                    Color(hex: "C58BF2")
-                ], startPoint: .topLeading, endPoint: .bottomTrailing))
-                .font(.custom("Poppins-Medium", size: 14))
-                .fontWeight(.medium)
+            NavigationLink {
+                LoginView()
+            } label: {
+
+                Text(LocaleKeys.Signup.login)
+                    .foregroundStyle(LinearGradient(colors: [
+                        Color(hex: "EEA4CE"),
+                        Color(hex: "C58BF2")
+                    ], startPoint: .topLeading, endPoint: .bottomTrailing))
+                    .font(.custom("Poppins-Medium", size: 14))
+                    .fontWeight(.medium)
+            }
+
         }
     }
 }

@@ -13,35 +13,44 @@ struct gymxApp: App {
     
     
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
-    @State private var showOnboarding: Bool = true
+    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
+    @StateObject var routing = Routing()
     init() {
-         // Initialize showOnboarding with the current AppStorage value
-         _showOnboarding = State(initialValue: isFirstLaunch)
         FirebaseApp.configure()
      }
     var body: some Scene {
         WindowGroup {
-            Group {
-                if showOnboarding{
-                    OnboardingView(isFirstLaunch: $isFirstLaunch)
-                }else{
-                    SignupView()
+                ZStack{
+                    if isFirstLaunch {
+                        NavigationStack(path: $routing.path) {
+                            OnboardingView()
+                                .navigationBarHidden(true)
+                                .transition(.move(edge: .leading))
+                        }
+                    } else if isLoggedIn {
+                        LoginView()
+                            .transition(.move(edge: .trailing))
+                    } else {
+                        NavigationStack(path: $routing.path) {
+                            LoginView()
+                                .navigationTitle("Login")
+                                .navigationBarHidden(false)
+                                .transition(.move(edge: .trailing))
+                        }
+                    }
+                }
+            .navigationTitle("test")
+            .navigationDestination(for: Routes.self) { route in
+                switch route {
+                case .home : LoginView()
+                case .login : LoginView()
+                case .onboarding : OnboardingView()
+                case .signup : SignupView()
                 }
             }
-            .onAppear {
-                showOnboarding = isFirstLaunch
-            }
-            
+            .animation(.easeInOut, value: [isFirstLaunch,isLoggedIn])
+            .environmentObject(routing)
         }
-        
-        
-        
-        
     }
-    
-    
 }
-
-
-
 
