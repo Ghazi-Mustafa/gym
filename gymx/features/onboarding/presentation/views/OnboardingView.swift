@@ -10,7 +10,7 @@ import SwiftUI
 struct OnboardingView: View {
     
     @ObservedObject var viewModel = OnboardingViewModel()
-    @Binding var isFirstLaunch : Bool
+    @EnvironmentObject var routing : Routing
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){
@@ -32,6 +32,7 @@ struct OnboardingView: View {
                 NextButtonView(isLastSlide: viewModel.isLastSlide,size: 60,action: {
                     viewModel.handlePageViewState()
                     
+                    
                 })
             }
             .padding(.horizontal,40)
@@ -41,13 +42,6 @@ struct OnboardingView: View {
         .navigationBarHidden(true)
         .toolbar(.hidden, for: .navigationBar)
         .ignoresSafeArea(.all)
-        .fullScreenCover(isPresented: $viewModel.navigateToSignup,onDismiss: {
-            isFirstLaunch = false
-        }) {
-            SignupView()
-        }
-
-
     }
     
 }
@@ -62,8 +56,6 @@ extension View {
 }
 
 #Preview {
-        OnboardingView(isFirstLaunch: .constant(true))
-            .environment(\.locale, Locale(identifier: "en"))
-            .previewDisplayName("Arabic")
+    OnboardingView()
 
 }
