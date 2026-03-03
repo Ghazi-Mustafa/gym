@@ -11,7 +11,6 @@ import Combine
 
 class OnboardingViewModel : ObservableObject{
     @Published var currentIndex : Int = 0
-    @Published  var navigateToSignup = false
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     let slides : [OnboardingSlideModel] = [
         OnboardingSlideModel(title: LocaleKeys.Onboarding.slide1Title, descreption: LocaleKeys.Onboarding.slide1Desc, imageName: "slide1Img"),
@@ -31,7 +30,6 @@ class OnboardingViewModel : ObservableObject{
     
     func handlePageViewState(){
         if isLastSlide {
-            navigateToSignup = true
             isFirstLaunch = false
             
         } else {
