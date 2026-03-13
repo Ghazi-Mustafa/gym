@@ -15,7 +15,7 @@ struct CustomDivider: View {
                 .frame(height: 1)
                 .foregroundStyle(Color(hex: "DDDADA"))
                 
-            Text(LocaleKeys.Signup.or)
+            Text(L10n.Auth.or.localized)
             
             Rectangle()
                 .frame(height: 1)

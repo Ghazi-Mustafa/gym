@@ -31,6 +31,46 @@
 "last_name" = "Cognome";
 "email" = "Email";
 "password" = "Password";
+"welcome_back" = "Bentornato";
+"forgot_your_password" = "Hai dimenticato la password?";
+"dont_have_account_yet" = "Non hai ancora un account?";
+"password_required" = "La password è obbligatoria";
+"set_password_1_condition" = "Almeno una lettera minuscola";
+"set_password_2_condition" = "Almeno una lettera maiuscola";
+"set_password_3_condition" = "Almeno un numero";
+"set_password_4_condition" = "Almeno un carattere speciale";
+"set_password_5_condition" = "Da 6 a 30 caratteri";
 
+"set_password_1_condition_error" = "La password deve contenere almeno una lettera minuscola";
+"set_password_2_condition_error" = "La password deve contenere almeno una lettera maiuscola";
+"set_password_3_condition_error" = "La password deve contenere almeno un numero";
+"set_password_4_condition_error" = "La password deve contenere almeno un carattere speciale";
+"set_password_5_condition_error" = "La lunghezza della password deve essere tra 6 e 30 caratteri";
 
+"confirm_password" = "Inserisci una password valida";
+"confirm_password_invalid" = "La password confermata non corrisponde alla password";
+
+"phone_required" = "Il numero di telefono è obbligatorio";
+"phone_invalid" = "Inserisci un numero di telefono valido";
+
+"name_required" = "Inserisci il tuo nome completo";
+
+"pin_required" = "Inserisci il codice";
+"pin_invalid" = "Inserisci un codice di 6 cifre";
+
+"profile_image" = "Carica un'immagine del profilo";
+
+"arabic_name" = "Inserisci il tuo nome in arabo";
+"english_name" = "Inserisci il tuo nome in inglese";
+
+"email_required" = "Inserisci la tua email";
+"email_invalid" = "Inserisci un indirizzo email valido";
+
+"username_required" = "Inserisci un nome utente";
+
+"email_not_found" = "Email non trovata";
+"user_disabled" = "Account utente disabilitato";
+"wrong_email_or_password" = "Email o password errata";
+"user_not_found" = "Utente non trovato";
+"generic_login_error" = "Accesso fallito. Per favore riprova.";
 

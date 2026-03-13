@@ -7,50 +7,71 @@
 
 import SwiftUI
 import FirebaseCore
+import FirebaseAuth
+import GoogleSignIn
 
 @main
 struct gymxApp: App {
     
-    
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
-    @AppStorage("isLoggedIn") var isLoggedIn: Bool = false
-    @StateObject var routing = Routing()
+    @StateObject private var firebaseAuthManager = FirebaseAuthManager()
+    @StateObject var mainRouting = Router<MainRoutes>()
+    @StateObject var authRouting = Router<AuthRoutes>()
     init() {
         FirebaseApp.configure()
-     }
+        setupDi()
+        setupGoogleSigninConfiguration()
+    }
+    
+    private func setupGoogleSigninConfiguration(){
+        guard let clientID = FirebaseApp.app()?.options.clientID else { return }
+        let config = GIDConfiguration(clientID: clientID)
+        GIDSignIn.sharedInstance.configuration = config
+    }
+    
     var body: some Scene {
         WindowGroup {
-                ZStack{
-                    if isFirstLaunch {
-                        NavigationStack(path: $routing.path) {
-                            OnboardingView()
-                                .navigationBarHidden(true)
-                                .transition(.move(edge: .leading))
-                        }
-                    } else if isLoggedIn {
-                        LoginView()
-                            .transition(.move(edge: .trailing))
-                    } else {
-                        NavigationStack(path: $routing.path) {
-                            LoginView()
-                                .navigationTitle("Login")
-                                .navigationBarHidden(false)
-                                .transition(.move(edge: .trailing))
-                        }
+            if isFirstLaunch{
+                OnboardingView()
+            }else if firebaseAuthManager.user != nil{
+                NavigationStack(path: $mainRouting.path) {
+                    Button {
+                       try? Auth.auth().signOut()
+                    } label: {
+                        Text("signOut")
                     }
+                        .navigationDestination(for: MainRoutes.self) { route in
+                            switch route {
+                            case .home: Button {
+                               try? Auth.auth().signOut()
+                            } label: {
+                                Text("signOut")
+                            }
+
+                            }
+                        }
                 }
-            .navigationTitle("test")
-            .navigationDestination(for: Routes.self) { route in
-                switch route {
-                case .home : LoginView()
-                case .login : LoginView()
-                case .onboarding : OnboardingView()
-                case .signup : SignupView()
+                .environmentObject(mainRouting)
+                .environmentObject(firebaseAuthManager)
+            }else{
+                NavigationStack(path: $authRouting.path) {
+                    LoginView()
+                        .navigationDestination(for: AuthRoutes.self) { route in
+                            switch route {
+                            case .login : LoginView()
+                            case .signup : SignupView()
+                            }
+                        }
+                }
+                .environmentObject(authRouting)
+                .environmentObject(firebaseAuthManager)
+                .onOpenURL{ url in
+                    GIDSignIn.sharedInstance.handle(url)
                 }
             }
-            .animation(.easeInOut, value: [isFirstLaunch,isLoggedIn])
-            .environmentObject(routing)
+
         }
+        
     }
 }
 

@@ -31,5 +31,46 @@
 "last_name" = "Last Name";
 "email" = "Email";
 "password" = "Password";
+"welcome_back" = "Welcome Back";
+"forgot_your_password" = "Forgot you password?";
+"dont_have_account_yet" = "Don't have an account yet?";
+"password_required" = "Password is required";
+"set_password_1_condition" = "At least one lowercase letter";
+"set_password_2_condition" = "At least one uppercase letter";
+"set_password_3_condition" = "At least one number";
+"set_password_4_condition" = "At least one special character";
+"set_password_5_condition" = "6 to 30 characters";
 
+"set_password_1_condition_error" = "Password must contain at least one lowercase letter";
+"set_password_2_condition_error" = "Password must contain at least one uppercase letter";
+"set_password_3_condition_error" = "Password must contain at least one number";
+"set_password_4_condition_error" = "Password must contain at least one special character";
+"set_password_5_condition_error" = "Password length must be between 6 and 30 characters";
+
+"confirm_password" = "Please enter a valid password";
+"confirm_password_invalid" = "Confirmed password does not match the password";
+
+"phone_required" = "Phone number is required";
+"phone_invalid" = "Please enter a valid phone number";
+
+"name_required" = "Please enter your full name";
+
+"pin_required" = "Please enter the Code";
+"pin_invalid" = "Please enter a 6-digit Code";
+
+"profile_image" = "Please upload a profile image";
+
+"arabic_name" = "Please enter your name in Arabic";
+"english_name" = "Please enter your name in English";
+
+"email_required" = "Please enter your email";
+"email_invalid" = "Please enter a valid email address";
+
+"username_required" = "Please enter a username";
+
+"email_not_found" = "Email not found";
+"user_disabled" = "User account disabled";
+"wrong_email_or_password" = "Wrong email or password";
+"user_not_found" = "User not found";
+"generic_login_error" = "Login failed. Please try again.";
 

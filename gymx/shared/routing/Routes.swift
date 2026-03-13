@@ -5,9 +5,11 @@
 //  Created by Mustafa Ghazi on 13/01/26.
 //
 
-enum Routes : Hashable{
-    case onboarding
+enum MainRoutes : Hashable{
+    case home
+}
+
+enum AuthRoutes : Hashable{
     case login
     case signup
-    case home
 }

@@ -31,3 +31,45 @@
 "last_name" = "اسم العائلة";
 "email" = "البريد الإلكتروني";
 "password" = "كلمة المرور";
+"welcome_back" = "مرحبًا بعودتك";
+"forgot_your_password" = "هل نسيت كلمة المرور؟";
+"dont_have_account_yet" = "ليس لديك حساب بعد؟";
+"password_required" = "كلمة المرور مطلوبة";
+"set_password_1_condition" = "يجب أن تحتوي على حرف صغير واحد على الأقل";
+"set_password_2_condition" = "يجب أن تحتوي على حرف كبير واحد على الأقل";
+"set_password_3_condition" = "يجب أن تحتوي على رقم واحد على الأقل";
+"set_password_4_condition" = "يجب أن تحتوي على رمز خاص واحد على الأقل";
+"set_password_5_condition" = "من 6 إلى 30 حرفًا";
+
+"set_password_1_condition_error" = "يجب أن تحتوي كلمة المرور على حرف صغير واحد على الأقل";
+"set_password_2_condition_error" = "يجب أن تحتوي كلمة المرور على حرف كبير واحد على الأقل";
+"set_password_3_condition_error" = "يجب أن تحتوي كلمة المرور على رقم واحد على الأقل";
+"set_password_4_condition_error" = "يجب أن تحتوي كلمة المرور على رمز خاص واحد على الأقل";
+"set_password_5_condition_error" = "يجب أن يكون طول كلمة المرور بين 6 و30 حرفًا";
+
+"confirm_password" = "يرجى إدخال كلمة مرور صحيحة";
+"confirm_password_invalid" = "كلمة المرور المؤكدة لا تطابق كلمة المرور";
+
+"phone_required" = "رقم الهاتف مطلوب";
+"phone_invalid" = "يرجى إدخال رقم هاتف صحيح";
+
+"name_required" = "يرجى إدخال الاسم الكامل";
+
+"pin_required" = "يرجى إدخال الرمز";
+"pin_invalid" = "يرجى إدخال رمز مكون من 6 أرقام";
+
+"profile_image" = "يرجى رفع صورة الملف الشخصي";
+
+"arabic_name" = "يرجى إدخال اسمك باللغة العربية";
+"english_name" = "يرجى إدخال اسمك باللغة الإنجليزية";
+
+"email_required" = "يرجى إدخال البريد الإلكتروني";
+"email_invalid" = "يرجى إدخال بريد إلكتروني صحيح";
+
+"username_required" = "يرجى إدخال اسم المستخدم";
+
+"email_not_found" = "البريد الإلكتروني غير موجود";
+"user_disabled" = "الحساب معطل";
+"wrong_email_or_password" = "البريد الإلكتروني أو كلمة المرور خاطئة";
+"user_not_found" = "المستخدم غير موجود";
+"generic_login_error" = "فشل تسجيل الدخول. حاول مرة أخرى.";

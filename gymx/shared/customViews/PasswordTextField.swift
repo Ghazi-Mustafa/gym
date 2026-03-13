@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct PasswordTextField: View {
     
@@ -17,21 +18,7 @@ struct PasswordTextField: View {
         HStack(spacing: 15) {
             Image(systemName: "lock")
                 .foregroundStyle(Color(hex: "7B6F72"))
-            
-            ZStack(alignment: .leading){
-                if password.isEmpty{
-                    Text(placeholder)
-                        .foregroundColor(Color(hex: "ADA4A5"))
-                    
-                }
-                if isSecure {
-                    SecureField("", text: $password)
-                }else{
-                    TextField("", text: $password)
-                }
-            }
-            
-
+            SecureToggleTextField(text: $password, placeholder: placeholder.localizedString, isSecure: isSecure)
             
             Image(systemName: isSecure ? "eye.slash" : "eye")
                 .foregroundStyle(Color(hex: "7B6F72"))
@@ -49,3 +36,49 @@ struct PasswordTextField: View {
 }
 
 
+struct SecureToggleTextField : UIViewRepresentable {
+    @Binding var text: String
+    var placeholder: String
+    var isSecure: Bool
+    
+    func makeUIView(context: Context) ->  UITextField {
+        let textField = UITextField()
+        textField.placeholder = placeholder
+        textField.isSecureTextEntry = isSecure
+        textField.autocapitalizationType = .none
+        textField.autocorrectionType = .no
+        textField.delegate = context.coordinator
+        textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
+        textField.setContentCompressionResistancePriority(.required, for: .vertical)
+        return textField
+    }
+    
+    
+    func updateUIView(_ uiView: UIViewType, context: Context) {
+        uiView.text = text
+        uiView.isSecureTextEntry = isSecure
+    }
+    func makeCoordinator() -> Coordinator { Coordinator(self) }
+    
+    class Coordinator: NSObject, UITextFieldDelegate {
+           var parent: SecureToggleTextField
+           init(_ parent: SecureToggleTextField) { self.parent = parent }
+
+           func textFieldDidChangeSelection(_ textField: UITextField) {
+               parent.text = textField.text ?? ""
+           }
+       }
+}
+
+
+
+extension LocalizedStringKey {
+    var localizedString: String {
+        // Extract key as string
+        let mirror = Mirror(reflecting: self)
+        if let key = mirror.descendant("key") as? String {
+            return NSLocalizedString(key, comment: "")
+        }
+        return ""
+    }
+}
