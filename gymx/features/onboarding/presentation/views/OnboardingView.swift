@@ -10,7 +10,6 @@ import SwiftUI
 struct OnboardingView: View {
     
     @ObservedObject var viewModel = OnboardingViewModel()
-    @EnvironmentObject var routing : Routing
     
     var body: some View {
         ZStack(alignment: .bottomTrailing){

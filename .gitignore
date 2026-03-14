@@ -60,5 +60,19 @@ fastlane/report.xml
 fastlane/Preview.html
 fastlane/screenshots/**/*.png
 fastlane/test_output
+# Xcode
+DerivedData/
+build/
+*.xcuserstate
+xcuserdata/
+
+# Swift Package Manager
+.build/
+Packages/
+
+# Secrets
+.env
+*.xcconfig
+
+# Firebase
 GoogleService-Info.plist
-gymx/GoogleService-Info.plist

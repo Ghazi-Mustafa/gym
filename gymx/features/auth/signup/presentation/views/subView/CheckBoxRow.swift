@@ -15,8 +15,8 @@ struct CheckBoxRow: View {
                 .onTapGesture {
                     isChecked.toggle()
                 }
-                .foregroundStyle(isChecked ? .black : Color(hex: "ADA4A5"))
-            Text(LocaleKeys.Signup.byContinuingAccept)
+                .foregroundStyle(isChecked ? Color(hex: "92A3FD") : Color(hex: "ADA4A5"))
+            Text(L10n.Auth.byContinuingAccept.localized)
                 
                 .font(.custom("Poppins-Regular", size: 10))
             

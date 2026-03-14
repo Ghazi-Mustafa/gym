@@ -14,5 +14,14 @@ extension View {
         UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder),
                                         to: nil, from: nil, for: nil)
     }
+    
+}
+
+extension UIApplication {
+    func getRootViewController() -> UIViewController? {
+        connectedScenes
+            .compactMap{$0 as? UIWindowScene}
+            .first?.windows.first?.rootViewController
+    }
 }
 

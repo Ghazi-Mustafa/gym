@@ -8,26 +8,38 @@
 import SwiftUI
 
 struct AuthOptions: View {
+    var onGoogleTap : () -> Void
     var body: some View {
         HStack(spacing: 30){
-            Image(systemName: "person")
+            Image(systemName: "apple.logo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 24,maxHeight: 24)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 15)
                     .stroke(Color(hex: "DDDADA"))
                     .foregroundStyle(.clear)
                     
                 )
-            Image(systemName: "person")
+            Image("googleLogo")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(maxWidth: 24,maxHeight: 24)
                 .padding()
                 .background(RoundedRectangle(cornerRadius: 15)
                     .stroke(Color(hex: "DDDADA"))
                     .foregroundStyle(.clear)
-                    
                 )
+                .onTapGesture {
+                    onGoogleTap()
+                }
+            
         }
+
+      
     }
 }
 
 #Preview {
-    AuthOptions()
+    AuthOptions(onGoogleTap: {})
 }

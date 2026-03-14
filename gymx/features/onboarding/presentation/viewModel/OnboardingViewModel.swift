@@ -13,10 +13,10 @@ class OnboardingViewModel : ObservableObject{
     @Published var currentIndex : Int = 0
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
     let slides : [OnboardingSlideModel] = [
-        OnboardingSlideModel(title: LocaleKeys.Onboarding.slide1Title, descreption: LocaleKeys.Onboarding.slide1Desc, imageName: "slide1Img"),
-        OnboardingSlideModel(title: LocaleKeys.Onboarding.slide2Title, descreption: LocaleKeys.Onboarding.slide2Desc, imageName: "slide2Img"),
-        OnboardingSlideModel(title: LocaleKeys.Onboarding.slide3Title, descreption: LocaleKeys.Onboarding.slide3Desc, imageName: "slide3Img"),
-        OnboardingSlideModel(title: LocaleKeys.Onboarding.slide4Title, descreption: LocaleKeys.Onboarding.slide4Desc, imageName: "slide4Img")
+        OnboardingSlideModel(title: L10n.Onboarding.slide1Title.localized, descreption: L10n.Onboarding.slide1Desc.localized, imageName: "slide1Img"),
+        OnboardingSlideModel(title: L10n.Onboarding.slide2Title.localized, descreption: L10n.Onboarding.slide2Desc.localized, imageName: "slide2Img"),
+        OnboardingSlideModel(title: L10n.Onboarding.slide3Title.localized, descreption: L10n.Onboarding.slide3Desc.localized, imageName: "slide3Img"),
+        OnboardingSlideModel(title: L10n.Onboarding.slide4Title.localized, descreption: L10n.Onboarding.slide4Desc.localized, imageName: "slide4Img")
     ]
     var isLastSlide : Bool{
         currentIndex == slides.count - 1

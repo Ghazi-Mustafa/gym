@@ -8,10 +8,12 @@
 import SwiftUI
 
 struct TitleSection: View {
+    var title : LocalizedStringKey
+    var descreption : LocalizedStringKey
     var body: some View {
         VStack(alignment: .center,spacing: 5){
-            Text(LocaleKeys.Signup.heyThere)
-            Text(LocaleKeys.Signup.createAccount)
+            Text(title)
+            Text(descreption)
                 .font(.custom("Poppins-Bold", size: 20))
                 .fontWeight(.bold)
         }
