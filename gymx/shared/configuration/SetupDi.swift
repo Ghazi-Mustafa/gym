@@ -8,7 +8,12 @@
 
 func setupDi(){
     let container = DIContainer.shared
-    
+    setupLoginDi(container: container)
+    setupSignupDi(container: container)
+
+}
+
+func setupLoginDi(container : DIContainer){
     container.register(GoogleSigninClient.self) {_ in
         GoogleSigninClient()
     }
@@ -34,5 +39,23 @@ func setupDi(){
         return LoginViewModel(
             loginWithEmailPasswordUseCase: loginWithEmailAndPassUseCase,
             loginWithGoogleUseCase: loginWithGoogle)
+    }
+}
+
+func setupSignupDi(container : DIContainer){
+    container.register(SignupRemoteDataSource.self) { _ in
+        return SignupRemoteDataSourceImpl()
+    }
+    container.register(SignupRepo.self) { resolver in
+        let remoteDataSource = resolver.resolve(SignupRemoteDataSource.self)
+        return SignupRepoImpl(remoteDataSource: remoteDataSource)
+    }
+    container.register(SignupWithEmailUseCase.self) { resolver in
+        let repoImp = resolver.resolve(SignupRepo.self)
+        return SignupWithEmailUseCase(repository: repoImp)
+    }
+    container.register(SignupViewModel.self) { resolver in
+        let useCase = resolver.resolve(SignupWithEmailUseCase.self)
+        return SignupViewModel(signupWithEmailUseCase: useCase)
     }
 }

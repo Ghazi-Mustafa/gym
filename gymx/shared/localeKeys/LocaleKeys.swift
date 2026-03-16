@@ -87,5 +87,7 @@ enum L10n {
         
         static let noGoogleToken = "no_google_token"
         static let userDoesntExist = "user_doesnt_exist"
+        static let firstNameRequired = "first_name_required"
+        static let lastNameRequired = "last_name_required"
     }
 }

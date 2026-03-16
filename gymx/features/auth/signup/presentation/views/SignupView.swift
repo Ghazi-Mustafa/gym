@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct SignupView: View {
-    @StateObject var viewModel = SignupViewModel()
+    @StateObject var vm : SignupViewModel
+    init(){
+        _vm = StateObject(wrappedValue: DIContainer.shared.resolve(SignupViewModel.self))
+    }
     
     var body: some View {
         GeometryReader{ geo in
@@ -17,15 +20,16 @@ struct SignupView: View {
                     TitleSection(title: L10n.Auth.heyThere.localized, descreption: L10n.Auth.createAccount.localized)
                         .padding(.bottom,25)
                     
-                    SignupForm(vm: viewModel)
+                    SignupForm(vm: vm)
                     
-                    CheckBoxRow(isChecked: $viewModel.isChecked)
+                    CheckBoxRow(isChecked: $vm.isChecked)
                         .padding(.leading,5)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Spacer()
                     
-                    AppCustomButton(title: L10n.Auth.register.localized, isDisabled: false,isLoading: false) {
+                    AppCustomButton(title: L10n.Auth.register.localized, isDisabled: false,isLoading: vm.state.isLoading) {
+                        vm.signupWithEmail()
                     }
                     
                     CustomDivider()

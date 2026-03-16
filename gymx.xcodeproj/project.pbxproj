@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		128900002F632A150067B525 /* LoginWithGoogleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289FFFF2F632A060067B525 /* LoginWithGoogleUseCase.swift */; };
 		1289FFF42F6308310067B525 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289FFF32F6308270067B525 /* FirebaseAuthManager.swift */; };
-		1289FFF62F630EC60067B525 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 1289FFF52F630EC60067B525 /* GoogleService-Info.plist */; };
 		1289FFF92F6315480067B525 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1289FFF82F6315480067B525 /* GoogleSignIn */; };
 		1289FFFB2F6315480067B525 /* GoogleSignInSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 1289FFFA2F6315480067B525 /* GoogleSignInSwift */; };
 		1289FFFE2F6324630067B525 /* GoogleSigninClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289FFFD2F6324590067B525 /* GoogleSigninClient.swift */; };
@@ -50,7 +49,7 @@
 		12ACF36A2F5F91C3006E177E /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF2FF2F5F91C3006E177E /* LoginView.swift */; };
 		12ACF36B2F5F91C3006E177E /* CustomDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3032F5F91C3006E177E /* CustomDivider.swift */; };
 		12ACF36C2F5F91C3006E177E /* TitleSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3042F5F91C3006E177E /* TitleSection.swift */; };
-		12ACF36D2F5F91C3006E177E /* SignupRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3062F5F91C3006E177E /* SignupRequest.swift */; };
+		12ACF36D2F5F91C3006E177E /* SignupUserEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3062F5F91C3006E177E /* SignupUserEntity.swift */; };
 		12ACF36E2F5F91C3006E177E /* SignupRepo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3082F5F91C3006E177E /* SignupRepo.swift */; };
 		12ACF36F2F5F91C3006E177E /* SignupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF30B2F5F91C3006E177E /* SignupViewModel.swift */; };
 		12ACF3702F5F91C3006E177E /* AlreadyHaveAccountRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF30D2F5F91C3006E177E /* AlreadyHaveAccountRow.swift */; };
@@ -81,12 +80,20 @@
 		12ACF3962F5F9D7A006E177E /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12ACF3952F5F9D75006E177E /* LoginViewModel.swift */; };
 		12CCFFB92ED4D07E003A969D /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 12CCFFB82ED4D07E003A969D /* FirebaseAuth */; };
 		12CCFFBB2ED4D07E003A969D /* FirebaseCore in Frameworks */ = {isa = PBXBuildFile; productRef = 12CCFFBA2ED4D07E003A969D /* FirebaseCore */; };
+		12DB7F202F670E1900FE5519 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 12DB7F1F2F670E1900FE5519 /* GoogleService-Info.plist */; };
+		12DB7F222F6716A700FE5519 /* SignupUserResponseEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F212F67168B00FE5519 /* SignupUserResponseEntity.swift */; };
+		12DB7F252F67171200FE5519 /* SignupWithEmailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F242F67170300FE5519 /* SignupWithEmailUseCase.swift */; };
+		12DB7F272F671C7000FE5519 /* SignpErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F262F671C6400FE5519 /* SignpErrors.swift */; };
+		12DB7F2B2F67361500FE5519 /* SignupRepoImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F2A2F67360800FE5519 /* SignupRepoImpl.swift */; };
+		12DB7F2F2F67692700FE5519 /* SignupRequestBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F2E2F67691C00FE5519 /* SignupRequestBody.swift */; };
+		12DB7F312F676A3700FE5519 /* SignupResponseDto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F302F676A2800FE5519 /* SignupResponseDto.swift */; };
+		12DB7F332F676BE200FE5519 /* SignupRemoteDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F322F676BD200FE5519 /* SignupRemoteDataSource.swift */; };
+		12DB7F362F676C8200FE5519 /* SignupRemoteDataSourceImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12DB7F352F676C7000FE5519 /* SignupRemoteDataSourceImpl.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1247764F2EBBB9DC00EB0021 /* gymx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gymx.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1289FFF32F6308270067B525 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
-		1289FFF52F630EC60067B525 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		1289FFFD2F6324590067B525 /* GoogleSigninClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninClient.swift; sourceTree = "<group>"; };
 		1289FFFF2F632A060067B525 /* LoginWithGoogleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithGoogleUseCase.swift; sourceTree = "<group>"; };
 		12AA917D2F60A5A7004AE9C8 /* Validations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validations.swift; sourceTree = "<group>"; };
@@ -105,7 +112,7 @@
 		12ACF2FF2F5F91C3006E177E /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		12ACF3032F5F91C3006E177E /* CustomDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomDivider.swift; sourceTree = "<group>"; };
 		12ACF3042F5F91C3006E177E /* TitleSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleSection.swift; sourceTree = "<group>"; };
-		12ACF3062F5F91C3006E177E /* SignupRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequest.swift; sourceTree = "<group>"; };
+		12ACF3062F5F91C3006E177E /* SignupUserEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserEntity.swift; sourceTree = "<group>"; };
 		12ACF3082F5F91C3006E177E /* SignupRepo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRepo.swift; sourceTree = "<group>"; };
 		12ACF30B2F5F91C3006E177E /* SignupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupViewModel.swift; sourceTree = "<group>"; };
 		12ACF30D2F5F91C3006E177E /* AlreadyHaveAccountRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlreadyHaveAccountRow.swift; sourceTree = "<group>"; };
@@ -158,6 +165,15 @@
 		12ACF38F2F5F9782006E177E /* LoginWithEmailPasswordUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithEmailPasswordUseCase.swift; sourceTree = "<group>"; };
 		12ACF3922F5F9CCE006E177E /* ViewState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewState.swift; sourceTree = "<group>"; };
 		12ACF3952F5F9D75006E177E /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		12DB7F1F2F670E1900FE5519 /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		12DB7F212F67168B00FE5519 /* SignupUserResponseEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupUserResponseEntity.swift; sourceTree = "<group>"; };
+		12DB7F242F67170300FE5519 /* SignupWithEmailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupWithEmailUseCase.swift; sourceTree = "<group>"; };
+		12DB7F262F671C6400FE5519 /* SignpErrors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignpErrors.swift; sourceTree = "<group>"; };
+		12DB7F2A2F67360800FE5519 /* SignupRepoImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRepoImpl.swift; sourceTree = "<group>"; };
+		12DB7F2E2F67691C00FE5519 /* SignupRequestBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRequestBody.swift; sourceTree = "<group>"; };
+		12DB7F302F676A2800FE5519 /* SignupResponseDto.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupResponseDto.swift; sourceTree = "<group>"; };
+		12DB7F322F676BD200FE5519 /* SignupRemoteDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRemoteDataSource.swift; sourceTree = "<group>"; };
+		12DB7F352F676C7000FE5519 /* SignupRemoteDataSourceImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignupRemoteDataSourceImpl.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -313,7 +329,8 @@
 		12ACF3072F5F91C3006E177E /* entities */ = {
 			isa = PBXGroup;
 			children = (
-				12ACF3062F5F91C3006E177E /* SignupRequest.swift */,
+				12DB7F212F67168B00FE5519 /* SignupUserResponseEntity.swift */,
+				12ACF3062F5F91C3006E177E /* SignupUserEntity.swift */,
 			);
 			path = entities;
 			sourceTree = "<group>";
@@ -329,6 +346,8 @@
 		12ACF30A2F5F91C3006E177E /* domain */ = {
 			isa = PBXGroup;
 			children = (
+				12DB7F262F671C6400FE5519 /* SignpErrors.swift */,
+				12DB7F232F6716F200FE5519 /* useCases */,
 				12ACF3072F5F91C3006E177E /* entities */,
 				12ACF3092F5F91C3006E177E /* signupRepo */,
 			);
@@ -374,6 +393,8 @@
 		12ACF3152F5F91C3006E177E /* signup */ = {
 			isa = PBXGroup;
 			children = (
+				12DB7F342F676C6700FE5519 /* dataSource */,
+				12DB7F282F6735D900FE5519 /* data */,
 				12ACF30A2F5F91C3006E177E /* domain */,
 				12ACF3142F5F91C3006E177E /* presentation */,
 			);
@@ -553,7 +574,7 @@
 				12ACF3392F5F91C3006E177E /* fonts */,
 				12ACF34A2F5F91C3006E177E /* shared */,
 				12ACF34B2F5F91C3006E177E /* Assets.xcassets */,
-				1289FFF52F630EC60067B525 /* GoogleService-Info.plist */,
+				12DB7F1F2F670E1900FE5519 /* GoogleService-Info.plist */,
 				12ACF34D2F5F91C3006E177E /* gymxApp.swift */,
 				12ACF34E2F5F91C3006E177E /* Info.plist */,
 			);
@@ -611,6 +632,57 @@
 				12ACF3952F5F9D75006E177E /* LoginViewModel.swift */,
 			);
 			path = viewModel;
+			sourceTree = "<group>";
+		};
+		12DB7F232F6716F200FE5519 /* useCases */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F242F67170300FE5519 /* SignupWithEmailUseCase.swift */,
+			);
+			path = useCases;
+			sourceTree = "<group>";
+		};
+		12DB7F282F6735D900FE5519 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F2D2F67690E00FE5519 /* dataSource */,
+				12DB7F2C2F67685400FE5519 /* models */,
+				12DB7F292F6735E200FE5519 /* repositories */,
+			);
+			path = data;
+			sourceTree = "<group>";
+		};
+		12DB7F292F6735E200FE5519 /* repositories */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F2A2F67360800FE5519 /* SignupRepoImpl.swift */,
+			);
+			path = repositories;
+			sourceTree = "<group>";
+		};
+		12DB7F2C2F67685400FE5519 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F302F676A2800FE5519 /* SignupResponseDto.swift */,
+				12DB7F2E2F67691C00FE5519 /* SignupRequestBody.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		12DB7F2D2F67690E00FE5519 /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F322F676BD200FE5519 /* SignupRemoteDataSource.swift */,
+			);
+			path = dataSource;
+			sourceTree = "<group>";
+		};
+		12DB7F342F676C6700FE5519 /* dataSource */ = {
+			isa = PBXGroup;
+			children = (
+				12DB7F352F676C7000FE5519 /* SignupRemoteDataSourceImpl.swift */,
+			);
+			path = dataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -685,7 +757,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				12ACF3512F5F91C3006E177E /* OFL.txt in Resources */,
-				1289FFF62F630EC60067B525 /* GoogleService-Info.plist in Resources */,
+				12DB7F202F670E1900FE5519 /* GoogleService-Info.plist in Resources */,
 				12ACF3522F5F91C3006E177E /* Poppins-Black.ttf in Resources */,
 				12ACF3532F5F91C3006E177E /* Poppins-BlackItalic.ttf in Resources */,
 				12ACF3542F5F91C3006E177E /* Poppins-Bold.ttf in Resources */,
@@ -721,15 +793,19 @@
 				12ACF36A2F5F91C3006E177E /* LoginView.swift in Sources */,
 				12ACF36B2F5F91C3006E177E /* CustomDivider.swift in Sources */,
 				12ACF36C2F5F91C3006E177E /* TitleSection.swift in Sources */,
+				12DB7F2F2F67692700FE5519 /* SignupRequestBody.swift in Sources */,
 				12ACF38A2F5F92FB006E177E /* LoginRepository.swift in Sources */,
 				12ACF3932F5F9CD4006E177E /* ViewState.swift in Sources */,
-				12ACF36D2F5F91C3006E177E /* SignupRequest.swift in Sources */,
+				12ACF36D2F5F91C3006E177E /* SignupUserEntity.swift in Sources */,
 				12ACF36E2F5F91C3006E177E /* SignupRepo.swift in Sources */,
 				12ACF36F2F5F91C3006E177E /* SignupViewModel.swift in Sources */,
 				12AA91892F61F90C004AE9C8 /* SetupDi.swift in Sources */,
+				12DB7F362F676C8200FE5519 /* SignupRemoteDataSourceImpl.swift in Sources */,
 				12ACF3902F5F9797006E177E /* LoginWithEmailPasswordUseCase.swift in Sources */,
 				12ACF3702F5F91C3006E177E /* AlreadyHaveAccountRow.swift in Sources */,
+				12DB7F312F676A3700FE5519 /* SignupResponseDto.swift in Sources */,
 				12AA91872F61F5F1004AE9C8 /* DiContainer.swift in Sources */,
+				12DB7F272F671C7000FE5519 /* SignpErrors.swift in Sources */,
 				12ACF3712F5F91C3006E177E /* AuthOptions.swift in Sources */,
 				12ACF3962F5F9D7A006E177E /* LoginViewModel.swift in Sources */,
 				12AA918C2F62248E004AE9C8 /* LoginRemoteDataSource.swift in Sources */,
@@ -739,7 +815,9 @@
 				12ACF3742F5F91C3006E177E /* SignupView.swift in Sources */,
 				12ACF3752F5F91C3006E177E /* OnboardingSlideModel.swift in Sources */,
 				12ACF3762F5F91C3006E177E /* NextButtonView.swift in Sources */,
+				12DB7F332F676BE200FE5519 /* SignupRemoteDataSource.swift in Sources */,
 				12ACF3772F5F91C3006E177E /* OnboardingSlideView.swift in Sources */,
+				12DB7F222F6716A700FE5519 /* SignupUserResponseEntity.swift in Sources */,
 				12ACF3782F5F91C3006E177E /* ProgressCircleView.swift in Sources */,
 				12AA918F2F6224F7004AE9C8 /* LoginRequestBody.swift in Sources */,
 				12ACF3792F5F91C3006E177E /* OnboardingViewModel.swift in Sources */,
@@ -751,6 +829,7 @@
 				12ACF37C2F5F91C3006E177E /* IconTextField.swift in Sources */,
 				12AA91912F622756004AE9C8 /* LoginResponseModel.swift in Sources */,
 				128900002F632A150067B525 /* LoginWithGoogleUseCase.swift in Sources */,
+				12DB7F2B2F67361500FE5519 /* SignupRepoImpl.swift in Sources */,
 				12ACF37D2F5F91C3006E177E /* PasswordTextField.swift in Sources */,
 				12ACF37E2F5F91C3006E177E /* Color+Extension.swift in Sources */,
 				12AA91972F623C4B004AE9C8 /* HandleFireBaseErrors.swift in Sources */,
@@ -763,6 +842,7 @@
 				1289FFF42F6308310067B525 /* FirebaseAuthManager.swift in Sources */,
 				12AA91802F61CC17004AE9C8 /* String+Extension.swift in Sources */,
 				12ACF3832F5F91C3006E177E /* gymxApp.swift in Sources */,
+				12DB7F252F67171200FE5519 /* SignupWithEmailUseCase.swift in Sources */,
 				12AA91932F622E1A004AE9C8 /* LoginRemoteDataSourceImpl.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

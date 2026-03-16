@@ -9,7 +9,7 @@ import Foundation
 
 protocol SignupRepo {
     
-    func signupWithEmail(request : SignupRequest) async -> Result<Void,Error>
+    func signupWithEmail(with params: SignupUserEntity) async throws -> SignupUserResponseEntity
     func signupWithGoogle() async -> Result<Void,Error>
     func signupWithApple() async -> Result<Void,Error>
 }
