@@ -8,7 +8,10 @@
 import SwiftUI
 
 struct AuthOptions: View {
-    var onGoogleTap : () -> Void
+    @StateObject var vm : AuthViewModel
+    init(){
+        _vm = StateObject(wrappedValue: DIContainer.shared.resolve(AuthViewModel.self))
+    }
     var body: some View {
         HStack(spacing: 30){
             Image(systemName: "apple.logo")
@@ -31,7 +34,7 @@ struct AuthOptions: View {
                     .foregroundStyle(.clear)
                 )
                 .onTapGesture {
-                    onGoogleTap()
+                    vm.loginWithGoogle()
                 }
             
         }
@@ -40,6 +43,6 @@ struct AuthOptions: View {
     }
 }
 
-#Preview {
-    AuthOptions(onGoogleTap: {})
-}
+//#Preview {
+//    AuthOptions(onGoogleTap: {})
+//}

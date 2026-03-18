@@ -34,9 +34,7 @@ struct SignupView: View {
                     
                     CustomDivider()
                     
-                    AuthOptions {
-                        
-                    }
+                    AuthOptions()
                     
                     AlreadyHaveAccountRow()
                         .padding(.vertical)

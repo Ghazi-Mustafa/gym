@@ -10,16 +10,14 @@ func setupDi(){
     let container = DIContainer.shared
     setupLoginDi(container: container)
     setupSignupDi(container: container)
+    setupLoginSocialDi(container: container)
 
 }
 
 func setupLoginDi(container : DIContainer){
-    container.register(GoogleSigninClient.self) {_ in
-        GoogleSigninClient()
-    }
-    container.register(LoginRemoteDataSource.self) {resolver in
-        let googleClient = resolver.resolve(GoogleSigninClient.self)
-        return LoginRemoteDataSourceImpl(googleClient: googleClient)
+
+    container.register(LoginRemoteDataSource.self) {_ in
+        return LoginRemoteDataSourceImpl()
     }
     container.register(LoginRepository.self) {resolver in
         let remoteDataSource = resolver.resolve(LoginRemoteDataSource.self)
@@ -29,16 +27,11 @@ func setupLoginDi(container : DIContainer){
         let repo = resolver.resolve(LoginRepository.self)
         return LoginWithEmailPasswordUseCase(repository: repo)
     }
-    container.register(LoginWithGoogleUseCase.self) {resolver in
-        let repo = resolver.resolve(LoginRepository.self)
-        return LoginWithGoogleUseCase(repository: repo)
-    }
+
     container.register(LoginViewModel.self) {resolver in
         let loginWithEmailAndPassUseCase = resolver.resolve(LoginWithEmailPasswordUseCase.self)
-        let loginWithGoogle = resolver.resolve(LoginWithGoogleUseCase.self)
         return LoginViewModel(
-            loginWithEmailPasswordUseCase: loginWithEmailAndPassUseCase,
-            loginWithGoogleUseCase: loginWithGoogle)
+            loginWithEmailPasswordUseCase: loginWithEmailAndPassUseCase)
     }
 }
 
@@ -57,5 +50,29 @@ func setupSignupDi(container : DIContainer){
     container.register(SignupViewModel.self) { resolver in
         let useCase = resolver.resolve(SignupWithEmailUseCase.self)
         return SignupViewModel(signupWithEmailUseCase: useCase)
+    }
+}
+
+func setupLoginSocialDi(container : DIContainer){
+    container.register(GoogleSigninClient.self) {_ in
+        GoogleSigninClient()
+    }
+    container.register(LoginSocialDataSource.self) { resolver in
+        let googleClient = resolver.resolve(GoogleSigninClient.self)
+        return LoginSocialDataSourceImpl(googleClient: googleClient)
+    }
+    container.register(LoginSocialsRepository.self) { resolver in
+        let dataSource = resolver.resolve(LoginSocialDataSource.self)
+        return LoginSocialRepositoryImpl(loginSocialDataSource: dataSource)
+    }
+    
+    container.register(LoginWithGoogleUseCase.self) { resolver in
+        let repo = resolver.resolve(LoginSocialsRepository.self)
+        return LoginWithGoogleUseCase(repository: repo)
+    }
+    
+    container.register(AuthViewModel.self) { resolver in
+        let loginWithGoogleUseCase =  resolver.resolve(LoginWithGoogleUseCase.self)
+        return AuthViewModel(loginWithGoogleUseCase: loginWithGoogleUseCase)
     }
 }
