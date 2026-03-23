@@ -42,4 +42,19 @@ extension Color {
             opacity: Double(a) / 255
         )
     }
+
+}
+
+extension LinearGradient {
+    static let purpleLinear = LinearGradient(colors: [
+             Color(hex: "C58BF2"),
+             Color(hex: "EEA4CE")
+         ], startPoint: .topLeading, endPoint: .bottomTrailing)
+    static let blueLinear = LinearGradient(colors: [
+             Color(hex: "9DCEFF"),
+             Color(hex: "92A3FD")
+         ], startPoint: .topLeading, endPoint: .bottomTrailing)
+    static let clear = LinearGradient(colors: [.clear,.clear], startPoint: .topLeading, endPoint: .bottomTrailing)
+    static let gray2 = LinearGradient(colors: [Color(hex: "ADA4A5")], startPoint: .top, endPoint: .bottom)
+     
 }

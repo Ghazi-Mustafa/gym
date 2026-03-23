@@ -19,28 +19,26 @@ struct IconTextField: View {
     var trailingIcon : String? = nil
     var tappedTrailingIcon : String? = nil
     var hasError : Bool = false
+    var contentType : UITextContentType?
     
     
-    init(placeHolder: LocalizedStringKey,text: Binding<String>, leadingIcon: String, trailingIcon : String? = nil,tappedTrailingIcon:String? = nil,hasError:Bool = false) {
+    init(placeHolder: LocalizedStringKey,text: Binding<String>, leadingIcon: String, trailingIcon : String? = nil,tappedTrailingIcon:String? = nil,hasError:Bool = false,contentType : UITextContentType? = nil) {
         self.placeHolder = placeHolder
         self._text = text
         self.leadingIcon = leadingIcon
         self.trailingIcon = trailingIcon
         self.tappedTrailingIcon = tappedTrailingIcon
         self.hasError = hasError
+        self.contentType = contentType
     }
     var body: some View {
         HStack(spacing: 15){
             Image(systemName: leadingIcon)
                 .foregroundStyle(Color(hex: "7B6F72"))
-            ZStack(alignment: .leading){
-                if text.isEmpty{
-                    Text(placeHolder)
-                        .foregroundColor(Color(hex: "ADA4A5"))
-                    
-                }
-                TextField("", text: $text)
-            }
+            
+            TextField(placeHolder, text: $text)
+                .textContentType(contentType)
+            
             
             if let trailingIcon = trailingIcon{
                 if let tappedTrailingIcon = tappedTrailingIcon {

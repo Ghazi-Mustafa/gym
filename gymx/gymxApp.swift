@@ -14,12 +14,13 @@ import GoogleSignIn
 struct gymxApp: App {
     
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true
-    @StateObject private var firebaseAuthManager = FirebaseAuthManager()
+    @StateObject private var firebaseAuthManager : FirebaseAuthManager
     @StateObject var mainRouting = Router<MainRoutes>()
     @StateObject var authRouting = Router<AuthRoutes>()
     init() {
         FirebaseApp.configure()
         setupDi()
+        _firebaseAuthManager = StateObject(wrappedValue: DIContainer.shared.resolve(FirebaseAuthManager.self))
         setupGoogleSigninConfiguration()
     }
     
@@ -34,25 +35,47 @@ struct gymxApp: App {
             if isFirstLaunch{
                 OnboardingView()
             }else if firebaseAuthManager.user != nil{
-                NavigationStack(path: $mainRouting.path) {
-                    Button {
-                       try? Auth.auth().signOut()
-                    } label: {
-                        Text("signOut")
-                    }
-                        .navigationDestination(for: MainRoutes.self) { route in
-                            switch route {
-                            case .home: Button {
-                               try? Auth.auth().signOut()
-                            } label: {
-                                Text("signOut")
-                            }
-
-                            }
+                if firebaseAuthManager.isProfileComplete ?? false{
+                    NavigationStack(path: $mainRouting.path) {
+                        Button {
+                           try? Auth.auth().signOut()
+                        } label: {
+                            Text("signOut")
                         }
+                            .navigationDestination(for: MainRoutes.self) { route in
+                                switch route {
+                                case .home: Button {
+                                   try? Auth.auth().signOut()
+                                } label: {
+                                    Text("signOut")
+                                }
+
+                                }
+                            }
+                    }
+                    .environmentObject(mainRouting)
+                    .environmentObject(firebaseAuthManager)
                 }
-                .environmentObject(mainRouting)
-                .environmentObject(firebaseAuthManager)
+                else{
+                AppLayout()
+//                    NavigationStack(path: $mainRouting.path) {
+//                        Button {
+//                            try? Auth.auth().signOut()
+//                        } label: {
+//                            Text("CompleteProfile")
+//                        }
+//                            .navigationDestination(for: MainRoutes.self) { route in
+//                                switch route {
+//                                case .home: Button {
+//                                   
+//                                } label: {
+//                                    Text("CompleteProfile")
+//                                }
+//
+//                                }
+//                            }
+//                    }
+                }
             }else{
                 NavigationStack(path: $authRouting.path) {
                     LoginView()
