@@ -47,6 +47,7 @@ struct SecureToggleTextField : UIViewRepresentable {
         textField.isSecureTextEntry = isSecure
         textField.autocapitalizationType = .none
         textField.autocorrectionType = .no
+        textField.textContentType = .password
         textField.delegate = context.coordinator
         textField.setContentHuggingPriority(.defaultHigh, for: .vertical)
         textField.setContentCompressionResistancePriority(.required, for: .vertical)

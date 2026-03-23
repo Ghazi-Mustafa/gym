@@ -19,10 +19,6 @@ class LoginRepositryImplementation : LoginRepository{
         let result = try await  remoteDataSource.loginUserEmailPassword(params: request)
         return result.toEntity()
     }
-    
-    func loginWithGoogle(with viewController: UIViewController) async throws -> UserLoginResponse {
-        let result = try await remoteDataSource.loginWithGoogle(with: viewController)
-        return result.toEntity()
-    }
+
     
 }

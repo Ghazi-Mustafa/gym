@@ -8,9 +8,9 @@
 import UIKit
 
 class LoginWithGoogleUseCase {
-    private var repository: LoginRepository
+    private var repository: LoginSocialsRepository
     
-    init(repository: LoginRepository) {
+    init(repository: LoginSocialsRepository) {
         self.repository = repository
     }
     

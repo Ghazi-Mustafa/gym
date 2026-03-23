@@ -26,9 +26,7 @@ struct LoginView: View {
                     vm.loginWithEmailAndPassword()
                 }
             CustomDivider()
-            AuthOptions {
-                vm.loginWithGoogle()
-            }
+            AuthOptions()
             DontHaveAccountRow()
         }
         .padding(.top,20)

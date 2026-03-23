@@ -9,6 +9,4 @@ import UIKit
 
 protocol LoginRepository {
     func loginUserEmailPassword(with userParams:UserParams)async throws -> UserLoginResponse
-    
-    func loginWithGoogle(with viewController : UIViewController)async throws -> UserLoginResponse
 }
