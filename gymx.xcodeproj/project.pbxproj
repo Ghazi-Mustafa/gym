@@ -15,6 +15,11 @@
 		12008B4B2F6B5EDC00164C1D /* FirestoreClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12008B4A2F6B5ED000164C1D /* FirestoreClient.swift */; };
 		12008B4E2F6CAF0E00164C1D /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 12008B4D2F6CAF0E00164C1D /* FirebaseFirestore */; };
 		12008B502F6CC34E00164C1D /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12008B4F2F6CC34900164C1D /* UserModel.swift */; };
+		1247C23D2F71A14500B2A4C4 /* AppLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247C23C2F71A14500B2A4C4 /* AppLayout.swift */; };
+		1247C2402F71A31F00B2A4C4 /* AppLayoutCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247C23F2F71A30B00B2A4C4 /* AppLayoutCoordinator.swift */; };
+		1247C2432F71A34A00B2A4C4 /* Tabs.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247C2422F71A34800B2A4C4 /* Tabs.swift */; };
+		1247C2452F71A36200B2A4C4 /* CustomTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247C2442F71A35D00B2A4C4 /* CustomTabView.swift */; };
+		1247C2472F71A36F00B2A4C4 /* ButtonTabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1247C2462F71A36D00B2A4C4 /* ButtonTabItem.swift */; };
 		128900002F632A150067B525 /* LoginWithGoogleUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289FFFF2F632A060067B525 /* LoginWithGoogleUseCase.swift */; };
 		1289FFF42F6308310067B525 /* FirebaseAuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1289FFF32F6308270067B525 /* FirebaseAuthManager.swift */; };
 		1289FFF92F6315480067B525 /* GoogleSignIn in Frameworks */ = {isa = PBXBuildFile; productRef = 1289FFF82F6315480067B525 /* GoogleSignIn */; };
@@ -108,6 +113,11 @@
 		12008B4A2F6B5ED000164C1D /* FirestoreClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreClient.swift; sourceTree = "<group>"; };
 		12008B4F2F6CC34900164C1D /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		1247764F2EBBB9DC00EB0021 /* gymx.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = gymx.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1247C23C2F71A14500B2A4C4 /* AppLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayout.swift; sourceTree = "<group>"; };
+		1247C23F2F71A30B00B2A4C4 /* AppLayoutCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLayoutCoordinator.swift; sourceTree = "<group>"; };
+		1247C2422F71A34800B2A4C4 /* Tabs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tabs.swift; sourceTree = "<group>"; };
+		1247C2442F71A35D00B2A4C4 /* CustomTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabView.swift; sourceTree = "<group>"; };
+		1247C2462F71A36D00B2A4C4 /* ButtonTabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonTabItem.swift; sourceTree = "<group>"; };
 		1289FFF32F6308270067B525 /* FirebaseAuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAuthManager.swift; sourceTree = "<group>"; };
 		1289FFFD2F6324590067B525 /* GoogleSigninClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSigninClient.swift; sourceTree = "<group>"; };
 		1289FFFF2F632A060067B525 /* LoginWithGoogleUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWithGoogleUseCase.swift; sourceTree = "<group>"; };
@@ -324,6 +334,50 @@
 				1247764F2EBBB9DC00EB0021 /* gymx.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		1247C2382F719DAB00B2A4C4 /* appLayout */ = {
+			isa = PBXGroup;
+			children = (
+				1247C23A2F719F2200B2A4C4 /* presentation */,
+			);
+			path = appLayout;
+			sourceTree = "<group>";
+		};
+		1247C23A2F719F2200B2A4C4 /* presentation */ = {
+			isa = PBXGroup;
+			children = (
+				1247C2412F71A33E00B2A4C4 /* subViews */,
+				1247C23E2F71A30100B2A4C4 /* coordinator */,
+				1247C23B2F71A11300B2A4C4 /* views */,
+			);
+			path = presentation;
+			sourceTree = "<group>";
+		};
+		1247C23B2F71A11300B2A4C4 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				1247C23C2F71A14500B2A4C4 /* AppLayout.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		1247C23E2F71A30100B2A4C4 /* coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				1247C23F2F71A30B00B2A4C4 /* AppLayoutCoordinator.swift */,
+			);
+			path = coordinator;
+			sourceTree = "<group>";
+		};
+		1247C2412F71A33E00B2A4C4 /* subViews */ = {
+			isa = PBXGroup;
+			children = (
+				1247C2462F71A36D00B2A4C4 /* ButtonTabItem.swift */,
+				1247C2442F71A35D00B2A4C4 /* CustomTabView.swift */,
+				1247C2422F71A34800B2A4C4 /* Tabs.swift */,
+			);
+			path = subViews;
 			sourceTree = "<group>";
 		};
 		1289FFF22F6308170067B525 /* firebaseManager */ = {
@@ -596,6 +650,7 @@
 		12ACF3242F5F91C3006E177E /* features */ = {
 			isa = PBXGroup;
 			children = (
+				1247C2382F719DAB00B2A4C4 /* appLayout */,
 				12ACF3162F5F91C3006E177E /* auth */,
 				12ACF3232F5F91C3006E177E /* onboarding */,
 			);
@@ -917,6 +972,7 @@
 				12ACF38A2F5F92FB006E177E /* LoginRepository.swift in Sources */,
 				12ACF3932F5F9CD4006E177E /* ViewState.swift in Sources */,
 				12ACF36D2F5F91C3006E177E /* SignupUserEntity.swift in Sources */,
+				1247C23D2F71A14500B2A4C4 /* AppLayout.swift in Sources */,
 				12ACF36E2F5F91C3006E177E /* SignupRepo.swift in Sources */,
 				12ACF36F2F5F91C3006E177E /* SignupViewModel.swift in Sources */,
 				12AA91892F61F90C004AE9C8 /* SetupDi.swift in Sources */,
@@ -947,6 +1003,7 @@
 				12ACF3792F5F91C3006E177E /* OnboardingViewModel.swift in Sources */,
 				12AA91822F61D440004AE9C8 /* LoginErrors.swift in Sources */,
 				12AA917E2F60A5B2004AE9C8 /* Validations.swift in Sources */,
+				1247C2402F71A31F00B2A4C4 /* AppLayoutCoordinator.swift in Sources */,
 				12ACF37A2F5F91C3006E177E /* OnboardingView.swift in Sources */,
 				12ACF37B2F5F91C3006E177E /* AppCustomButton.swift in Sources */,
 				12ACF38C2F5F937E006E177E /* UserParams.swift in Sources */,
@@ -962,10 +1019,13 @@
 				12AA91972F623C4B004AE9C8 /* HandleFireBaseErrors.swift in Sources */,
 				12ACF38E2F5F93C5006E177E /* UserLoginResponse.swift in Sources */,
 				12AA91852F61D79A004AE9C8 /* LoginRepositryImplementation.swift in Sources */,
+				1247C2452F71A36200B2A4C4 /* CustomTabView.swift in Sources */,
 				12ACF37F2F5F91C3006E177E /* View+Extension.swift in Sources */,
 				12ACF3802F5F91C3006E177E /* LocaleKeys.swift in Sources */,
 				12ACF3812F5F91C3006E177E /* Routes.swift in Sources */,
+				1247C2432F71A34A00B2A4C4 /* Tabs.swift in Sources */,
 				12ACF3822F5F91C3006E177E /* Routing.swift in Sources */,
+				1247C2472F71A36F00B2A4C4 /* ButtonTabItem.swift in Sources */,
 				1289FFF42F6308310067B525 /* FirebaseAuthManager.swift in Sources */,
 				12AA91802F61CC17004AE9C8 /* String+Extension.swift in Sources */,
 				12ACF3832F5F91C3006E177E /* gymxApp.swift in Sources */,
