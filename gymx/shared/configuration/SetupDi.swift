@@ -11,11 +11,19 @@ func setupDi(){
     setupLoginDi(container: container)
     setupSignupDi(container: container)
     setupLoginSocialDi(container: container)
+    setupHomeDi(container: container)
+    setupAppLayoutDi(container: container)
 
 }
 
 func setupLoginDi(container : DIContainer){
-
+    container.register(FirestoreClient.self) { _ in
+        return FirestoreClient()
+    }
+    container.register(FirebaseAuthManager.self) { resolver in
+       let firestore =  resolver.resolve(FirestoreClient.self)
+        return FirebaseAuthManager(firestoreClient: firestore)
+    }
     container.register(LoginRemoteDataSource.self) {_ in
         return LoginRemoteDataSourceImpl()
     }
@@ -76,3 +84,16 @@ func setupLoginSocialDi(container : DIContainer){
         return AuthViewModel(loginWithGoogleUseCase: loginWithGoogleUseCase)
     }
 }
+
+func setupAppLayoutDi(container:DIContainer){
+    container.register(AppLayoutCoordinator.self) { container in
+        return AppLayoutCoordinator()
+    }
+}
+
+func setupHomeDi(container:DIContainer){
+    container.register(HomeViewModel.self) { container in
+        return HomeViewModel()
+    }
+}
+

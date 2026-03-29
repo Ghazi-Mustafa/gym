@@ -35,7 +35,6 @@ final class FirebaseAuthManager : ObservableObject {
     }
     
     func checkProfile()async{
-        print("check called")
         guard let uid = user?.uid else{
             isProfileComplete = false
             return
